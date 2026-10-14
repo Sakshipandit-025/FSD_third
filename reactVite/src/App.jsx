@@ -9,26 +9,26 @@ import ColorChange from './components/ColorChange'
 import MyState from './components/MyState'
 import Name from './components/Name'
 import ImageManipulation from './components/ImageManipulation'
+import FetchProduct from './components/FetchProduct'
+import Dasboard from './components/Dasboard'
+import Login from './components/Login'
+import Registration from './components/Registration'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './components/home'
+
 function App() {
   return (
-    <div style={{ 
-      border: '2px solid black', 
-      minWidth: '300px', 
-      padding: '20px', 
-      display: 'inline-block',
-      borderRadius: '8px'
-    }}>
-      {/* <h2 style={{color:'red'}}>ABES Engineering College</h2>
-      <ICard/>
-      <p style={{textAlign:'center'}}>Name : Sakshi Pandit</p>
-      <p style={{textAlign:'center'}}>Branch: CSE</p>
-      <p style={{textAlign:'center'}}>Semester : V</p> */}
-
-      {/* <MyState /> */}
-      <hr style={{ margin: '15px 0' }} />
-      {/* <Name/> */}
-      {/* <ColorChange /> */}
-      <ImageManipulation/>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/register' element={<Registration/>}></Route>
+        </Route>
+       
+        <Route path='/dashboard' element={<Dasboard/>}></Route>
+        </Routes>
+        </BrowserRouter>
     </div>
   )
 }
