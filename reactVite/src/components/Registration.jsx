@@ -5,9 +5,11 @@ function Registration() {
   const[email,setEmail]=useState();
   const[password,setPassword]=useState();
   function getData(e){
-    e.preventDefault();
-    const data={name,email,password}
-    console.log(data);
+     e.preventDefault();
+     const data={name,email,password}
+     alert(name+email+password)
+     console.log(data);
+ 
   }
   return (
     <div>
@@ -35,7 +37,7 @@ function Registration() {
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
 
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button class="btn btn-primary" onClick={getData}>Register</button>
         </form>
     </div>
   )
